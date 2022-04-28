@@ -1,27 +1,39 @@
-const employee = {
-    name: "moya Dnicore",
-    streetAddress: "111 Bean Creek Road",
-};
-function updateEmployeeWithKeyAndValue(obj, key, value) {
-    const newObj = {...obj};
+//assign employee variable as an object with name and streetAddress keys
 
-    newObj[key] = value;
-
-    return newObj;
-} 
-
-function destructivelyUpdateEmployeeWithKeyAndValue(obj, key, value) {
-    obj[key] = value;
-    return obj;
-}
-function deleteFromEmployeeByKey(obj, key, value) {
+//initialize object :
+const employee = {   
+    name: 'cora',
+    streetAddress: '234 Turtle Drive,'
+ };
+ //return a new object without mutating employee object with spread operator
+ //new object has updated value for key passed in
+ function updateEmployeeWithKeyAndValue(object, key, value){
+    const newObject = {...employee};
+    newObject[key] = value; //desired change/addition to employee Object
+    return newObject
+ }
+ //destructively update object, make changes directly to original object and return new value
+  
+ function destructivelyUpdateEmployeeWithKeyAndValue(object, key, value){
+  
+    employee[key] = value;  //update value with key
+    return employee         //return updated object
+ }
+  
+ //delete property with key from employee object
+ //nondestructive -> return new object
+  
+ function deleteFromEmployeeByKey(object, key, value){
     return {
-        ...obj,
+        ...employee,
         [key]: value,
-    }
-};
-
-function destructivelyDeleteFromEmployeeByKey(employee, key, value) {
-    delete employee[key]
-    return employee;
-}
+    };
+ }
+  
+ //destructively delete from employee object with key
+  
+ function destructivelyDeleteFromEmployeeByKey(object, key, value){
+    delete employee[key]   //delete object key
+    return employee        //
+ }
+ 
